@@ -29,6 +29,8 @@ import { MenuItem } from '@core/modelo/menu-item';
 })
 export class NavbarComponent implements OnInit {
 
+titulo = 'Reserva de Fincas';
+
   @Input()
   items: MenuItem[];
 
