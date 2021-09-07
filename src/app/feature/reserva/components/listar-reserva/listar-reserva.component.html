@@ -1,1 +1,28 @@
-<p>listar-reserva works!</p>
+<div class="btn-toolbar">
+  <button type="button" class="btn btn-dark btn-space" routerLink="/reserva/disponibilidad" id="linkConsultarDisponibilidad">Consultar Disponibilidad</button>
+</div>
+<div class="card espacio">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">Finca reservada</th>
+        <th scope="col">Identificación Usuario</th>
+        <th scope="col">Fecha de inicio</th>
+        <th scope="col">Fecha de finalización</th>
+        <th scope="col">Valor de la reserva</th>
+      </tr>
+      </thead>
+      <tbody class="reservas">
+      <tr *ngFor="let item of listaReservas | async" class="itemReserva">
+        <td class="text-center" id="itemReservaIdFinca{{item.idReserva}}">{{ item.idFinca }}</td>
+        <td class="text-center" id="itemReservaIdUsuario{{item.idReserva}}">{{ item.idUsuario }}</td>
+        <td class="text-center" id="itemReservaFechaInicio{{item.idReserva}}">{{ item.fechaInicioReserva }}</td>
+        <td class="text-center" id="itemReservaFechaFinReserva{{item.idReserva}}">{{ item.fechaFinReserva }}</td>
+        <td class="text-center" id="itemReservaValorTotalReserva{{item.idReserva}}">{{ item.valorTotalReserva }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,1 +1,30 @@
-<p>crear-reserva works!</p>
+<div class="card carta">
+  <div class="card-header text-center">
+    Crear reserva
+  </div>
+  <div class="card-footer text-muted ">
+    <button type="submit" class="btn btn-primary right" (click)='crear()' id="linkAceptarCrearReserva">Aceptar</button>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="fechaInicio" class="form-label">Fecha inicio</label>
+        <input type="date" class="form-control" id="fechaInicioReserva" [(ngModel)]="reserva.fechaInicioReserva" name="fechaInicio">
+      </div>
+      <div class="mb-3">
+        <label for="fechaFin" class="form-label">Fecha in</label>
+        <input type="date" class="form-control" id="fechaFinReserva" [(ngModel)]="reserva.fechaFinReserva" name="fechaFin">
+      </div>
+      <div class="mb-3">
+        <label for="idFinca" class="form-label">Id Finca</label>
+        <input type="number" class="form-control" id="idFinca" [(ngModel)]="reserva.idFinca" name="idFinca">
+      </div>
+      <div class="mb-3">
+        <label for="idUsuario" class="form-label">Identificción Usuario</label>
+        <input type="text" class="form-control" id="idUsuario" [(ngModel)]="reserva.idUsuario" name="idUsuario">
+      </div>
+    </form>
+  </div>
+
+</div>
+<router-outlet></router-outlet>

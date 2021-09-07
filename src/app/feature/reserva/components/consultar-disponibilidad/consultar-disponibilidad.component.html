@@ -1,0 +1,26 @@
+<div class="card centrar">
+  <div class="card-header text-center">
+    Consultar finca disponible
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+      <label>Fecha Inicio</label>
+      <input type="date" class="form-control" name="fechaInicio"  [(ngModel)]="fechaInicio" id="fechaInicio">
+  </div>
+      <div class="mb-3">
+    <label>Fecha Fin</label>
+    <input type="date" class="form-control" name="fechaFin"  [(ngModel)]="fechaFin" id="fechaFin">
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    <button class="btn btn-success" (click)="consultarDisponibilidad()" id="consultarDisponibilidad">Consultar</button>
+  </div>
+</div>
+    </form>
+  </div>
+<div>
+  <app-listar-disponibilidad [items]="fincas"></app-listar-disponibilidad>
+</div>
+</div>

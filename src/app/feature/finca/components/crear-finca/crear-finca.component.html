@@ -1,1 +1,29 @@
-<p>crear-finca works!</p>
+<div class="card carta">
+  <div class="card-header text-center">
+    Crear Finca
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombreCrearFinca" [(ngModel)]="finca.nombre" name="nombre">
+      </div>
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="direccionCrearFinca" [(ngModel)]="finca.direccion" name="direccion">
+      </div>
+      <div class="mb-3">
+        <label for="cantidadHabitaciones" class="form-label">Cantidad de habitaciones</label>
+        <input type="text" class="form-control" id="cantidadHabitaciones" [(ngModel)]="finca.cantidadHabitaciones" name="cantidadHabitaciones">
+      </div>
+      <div class="mb-3">
+        <label for="precioPorDia" class="form-label">Precio por día</label>
+        <input type="text" class="form-control" id="precioPorCrearFinca" [(ngModel)]="finca.precioPorDia" name="precioPordia">
+      </div>
+    </form>
+  </div>
+  <div class="card-footer text-muted ">
+    <button type="button" class="btn btn-dark" (click)='crear()' id="linkAceptarCrearFinca">Guardar</button>
+  </div>
+</div>
+<router-outlet></router-outlet>

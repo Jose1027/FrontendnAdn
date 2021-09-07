@@ -1,1 +1,26 @@
-<p>listar-finca works!</p>
+<div class="mx-4 px-4 mb-4 pb-4">
+  <button type="button" class="btn btn-dark" routerLink="/finca/crear" id="linkCrearFinca">Crear</button>
+</div>
+<div class="card espacio">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Cantidad de habitaciones</th>
+        <th scope="col">Precio por día</th>
+      </tr>
+      </thead>
+      <tbody class="text-center">
+      <tr *ngFor="let item of listaFincas | async" class="itemFinca">
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.direccion }}</td>
+        <td>{{ item.cantidadHabitaciones }}</td>
+        <td>{{ item.precioPorDia }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>

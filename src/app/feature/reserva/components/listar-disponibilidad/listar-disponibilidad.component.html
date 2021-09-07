@@ -1,0 +1,36 @@
+
+<div class="row">
+  <div class="col-sm">
+    <h1>Listado de Fincas</h1>
+  </div>
+</div>
+
+<div class="card espacio">
+  <div class="card-body">
+    <table class="table table-hover" id="tablaListadoFincas">
+      <thead class="table-dark text-center">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Cantidad de Habitaciones</th>
+        <th scope="col">Precio por día</th>
+        <th scope="col">Reservar</th>
+      </tr>
+      </thead>
+      <tbody class="text-center">
+      <tr *ngFor="let item of items">
+        <th>{{item.id}}</th>
+        <td>{{item.nombre}}</td>
+        <td>{{item.direccion}}</td>
+        <td>{{item.cantidadHabitaciones}}</td>
+        <td>{{item.precioPorDia}}</td>
+        <td>
+          <button type="button" name = "button" class="btn btn-primary" id="linkReservar{{item.id}}" [routerLink] = "['/reserva/crear',item.id]" routerLinkActive="active">
+            Reserar
+          </button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
