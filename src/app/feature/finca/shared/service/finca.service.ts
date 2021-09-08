@@ -3,7 +3,9 @@ import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
 import { Finca } from '../model/finca';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class FincaService {
 
   constructor(protected http: HttpService) {}
@@ -16,9 +18,9 @@ export class FincaService {
     return this.http.doPost<Finca, boolean>(`${environment.endpoint}/fincas`, finca, this.http.optsName('crear finca'));
   }
 
-    public consultarDisponibilidad(fechaInicio: string,fechaFin: string) {
-      console.log(`${environment.endpoint}/fincas/${fechaInicio}/${fechaFin}`)
-      return this.http.doGet<Finca[]>(`${environment.endpoint}/fincas/${fechaInicio}/${fechaFin}`);
+    public consultarDisponibilidad(fechaInicio: string, fechaFin: string) {
+      console.log('${environment.endpoint}/fincas/${fechaInicio}/${fechaFin}');
+      return this.http.doGet<Finca[]>('${environment.endpoint}/fincas/${fechaInicio}/${fechaFin}');
     }
 
 }

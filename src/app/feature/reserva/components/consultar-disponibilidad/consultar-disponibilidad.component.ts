@@ -14,18 +14,17 @@ export class ConsultarDisponibilidadComponent implements OnInit {
   fechaFin: Date = new Date();
   public fincas: Finca[] = [];
 
-  constructor(protected fincaService: FincaService,
-                  public datepipe: DatePipe) { }
+  constructor(protected fincaService: FincaService, public datepipe: DatePipe) { }
 
   ngOnInit(): void {
   }
 
   consultarDisponibilidad(){
-    this.fincaService.consultarDisponibilidad(this.datepipe.transform(this.fechaInicio, 'yyyy-MM-dd'),this.datepipe.transform(this.fechaFin, 'yyyy-MM-dd'))
-    .subscribe(
-      response => {
+    this.fincaService
+    .consultarDisponibilidad(this.datepipe.transform(this.fechaInicio, 'yyyy-MM-dd'), this.datepipe.transform(this.fechaFin, 'yyyy-MM-dd'))
+    .subscribe(response => {
         this.fincas = response;
       }
-    )
+    );
   }
 }

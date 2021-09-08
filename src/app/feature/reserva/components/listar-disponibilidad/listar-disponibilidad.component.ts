@@ -18,7 +18,7 @@ export class ListarDisponibilidadComponent implements OnInit {
   }
 
     realizarReserva(id: number){
-      this.route.navigate(["reserva", "crear", id]);
+      this.route.navigate(['reserva', 'crear', id]);
     }
 
 }

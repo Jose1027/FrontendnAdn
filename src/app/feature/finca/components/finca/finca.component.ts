@@ -11,7 +11,7 @@ export class FincaComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-  this.router.navigate(['/finca/listar'])
+  this.router.navigate(['/finca/listar']);
   }
 
 }

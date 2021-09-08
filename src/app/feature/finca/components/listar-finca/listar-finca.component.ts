@@ -12,7 +12,7 @@ export class ListarFincaComponent implements OnInit {
 
   public listaFincas: Observable<Finca[]>;
 
-  constructor(protected fincaService:  FincaService) { }
+  constructor(protected fincaService: FincaService) { }
 
   ngOnInit(): void {
     this.listaFincas = this.fincaService.consultar();

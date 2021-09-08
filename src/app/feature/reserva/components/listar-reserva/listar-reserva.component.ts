@@ -12,7 +12,7 @@ export class ListarReservaComponent implements OnInit {
 
   public listaReservas: Observable<Reserva[]>;
 
-  constructor(protected reservaService:  ReservaService) { }
+  constructor(protected reservaService: ReservaService) { }
 
   ngOnInit(): void {
     this.listaReservas = this.reservaService.consultar();

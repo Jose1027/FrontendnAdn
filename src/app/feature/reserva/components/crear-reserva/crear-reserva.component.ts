@@ -11,9 +11,9 @@ import alert from 'sweetalert2';
 })
 export class CrearReservaComponent implements OnInit {
 
- public reserva: Reserva = new Reserva();
+ public reserva: Reserva;
 
-  constructor(protected reservaService:  ReservaService, protected router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(protected reservaService: ReservaService, protected router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   this.cargarReserva();
@@ -24,17 +24,18 @@ export class CrearReservaComponent implements OnInit {
   this.reservaService.crear(this.reserva).subscribe(
         a => {
           this.router.navigate(['/reserva/listar']),
-          alert.fire('Reserva creada', `Reserva creada con éxito`, 'success')
+          alert.fire('Reserva creada', `Reserva creada con éxito`, 'success');
         }
-      )
+      );
       }
 
   cargarReserva(){
     this.activatedRoute.params.subscribe(
       params => {
-        let idFinca = params['id'];
-        this.reserva.idFinca=idFinca;
-        }
-    )
+      const key = 'id';
+      const idFinca = params[key];
+      this.reserva.idFinca = idFinca;
+      }
+    );
   }
 }

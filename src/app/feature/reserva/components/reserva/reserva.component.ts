@@ -11,7 +11,7 @@ export class ReservaComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigate(['/reserva/listar'])
+    this.router.navigate(['/reserva/listar']);
   }
 
 }

@@ -3,7 +3,9 @@ import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
 import { Reserva } from '../model/reserva';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ReservaService {
 
   constructor(protected http: HttpService) {}

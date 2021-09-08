@@ -11,9 +11,9 @@ import swal from 'sweetalert2';
 })
 export class CrearFincaComponent implements OnInit {
 
-  public finca: Finca = new Finca();
+  public finca: Finca;
 
-  constructor(protected fincaService:  FincaService, protected router: Router) { }
+  constructor(protected fincaService: FincaService, protected router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,9 +22,9 @@ export class CrearFincaComponent implements OnInit {
     this.fincaService.crear(this.finca).subscribe(
       a => {
         this.router.navigate(['/finca/listar']),
-        swal.fire('Finca creada', `Finca ${this.finca.nombre} creada con éxito`, 'success')
+        swal.fire('Finca creada', 'Finca ${this.finca.nombre} creada con éxito', 'success');
       }
-    )
+    );
   }
 
 }
