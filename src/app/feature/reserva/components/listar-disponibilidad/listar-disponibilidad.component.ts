@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Finca } from 'src/app/feature/finca/shared/model/Finca';
+import { Finca } from 'src/app/feature/finca/shared/model/finca';
 
 @Component({
   selector: 'app-listar-disponibilidad',

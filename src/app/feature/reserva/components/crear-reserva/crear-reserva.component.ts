@@ -11,7 +11,7 @@ import alert from 'sweetalert2';
 })
 export class CrearReservaComponent implements OnInit {
 
- public reserva: Reserva;
+  reserva: Reserva = new Reserva('', '', '', '', '');
 
   constructor(protected reservaService: ReservaService, protected router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -29,7 +29,7 @@ export class CrearReservaComponent implements OnInit {
       );
       }
 
-  cargarReserva(){
+  private cargarReserva(){
     this.activatedRoute.params.subscribe(
       params => {
       const key = 'id';

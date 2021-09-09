@@ -8,16 +8,16 @@
   <div class="card-body">
     <form>
       <div class="mb-3">
-        <label for="fechaInicio" class="form-label">Fecha inicio</label>
+        <label for="fechaInicioReserva" class="form-label">Fecha inicio</label>
         <input type="date" class="form-control" id="fechaInicioReserva" [(ngModel)]="reserva.fechaInicioReserva" name="fechaInicio">
       </div>
       <div class="mb-3">
-        <label for="fechaFin" class="form-label">Fecha in</label>
+        <label for="fechaFinReserva" class="form-label">Fecha Fin</label>
         <input type="date" class="form-control" id="fechaFinReserva" [(ngModel)]="reserva.fechaFinReserva" name="fechaFin">
       </div>
       <div class="mb-3">
         <label for="idFinca" class="form-label">Id Finca</label>
-        <input type="number" class="form-control" id="idFinca" [(ngModel)]="reserva.idFinca" name="idFinca">
+        <input readonly type="number" class="form-control" id="idFinca" [(ngModel)]="reserva.idFinca" name="idFinca">
       </div>
       <div class="mb-3">
         <label for="idUsuario" class="form-label">Identificción Usuario</label>
