@@ -1,6 +1,5 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { DatePipe } from '@angular/common';
 import { ListarReservaComponent } from './listar-reserva.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,8 +20,7 @@ describe('ListarReservaComponent', () => {
       imports: [
         CommonModule,
         HttpClientModule,
-        RouterTestingModule,
-        DatePipe
+        RouterTestingModule
       ],
       providers: [ReservaService, HttpService]
     })

@@ -1,3 +1,4 @@
+/*
 import { by, element } from 'protractor';
 
 export class ProductoPage {
@@ -27,3 +28,4 @@ export class ProductoPage {
         return this.listaProductos.count();
     }
 }
+ */

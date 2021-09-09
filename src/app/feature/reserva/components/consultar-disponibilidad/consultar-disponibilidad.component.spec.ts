@@ -4,7 +4,6 @@ import { ConsultarDisponibilidadComponent } from './consultar-disponibilidad.com
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { DatePipe } from '@angular/common';
 import { FincaService } from 'src/app/feature/finca/shared/service/finca.service';
 import { Finca } from 'src/app/feature/finca/shared/model/finca';
 import { HttpService } from 'src/app/core/services/http.service';
@@ -22,8 +21,7 @@ describe('ConsultarDisponibilidadComponent', () => {
       imports: [
         CommonModule,
         HttpClientModule,
-        RouterTestingModule,
-        DatePipe
+        RouterTestingModule
       ],
       providers: [FincaService, HttpService]
     })
@@ -42,7 +40,7 @@ describe('ConsultarDisponibilidadComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    fincaService.consultarDisponibilidad('2021-09-15', '2021-09-15').subscribe(resultado => {
+    fincaService.consultarDisponibilidad('2021-09-15', '2021-09-16').subscribe(resultado => {
       expect(2).toBe(resultado.length);
   });
 });

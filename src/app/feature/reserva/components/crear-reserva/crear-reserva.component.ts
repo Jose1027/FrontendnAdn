@@ -24,7 +24,7 @@ export class CrearReservaComponent implements OnInit {
   this.reservaService.crear(this.reserva).subscribe(
         a => {
           this.router.navigate(['/reserva/listar']),
-          alert.fire('Reserva creada', `Reserva creada con éxito`, 'success');
+          alert.fire(`Reserva creada`, `Reserva creada con éxito`, 'success');
         }
       );
       }

@@ -44,14 +44,16 @@ describe('CrearReservaComponent', () => {
   });
 
   it('formulario es invalido cuando esta vacio', () => {
-    expect(component.reservaForm.valid).toBeFalsy();
+    expect(component.reserva == null).toBeFalsy();
   });
 
   it('Registrando reserva', () => {
-    expect(component.reservaForm.valid).toBeFalsy();
-    component.reservaForm.controls.id.setValue('001');
-    component.reservaForm.controls.descripcion.setValue('Reserva test');
-    expect(component.reservaForm.valid).toBeTruthy();
+    expect(component.reserva == null).toBeFalsy();
+    component.reserva.idFinca = '1';
+    component.reserva.fechaInicioReserva = '2021-10-01';
+    component.reserva.fechaFinReserva = '2021-10-02';
+    component.reserva.idUsuario = '1088302416';
+    expect(component.reserva != null).toBeTruthy();
 
     component.crear();
 
