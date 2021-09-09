@@ -18,15 +18,15 @@
         <th scope="col">Reservar</th>
       </tr>
       </thead>
-      <tbody class="text-center">
-      <tr *ngFor="let item of items">
-        <th>{{item.id}}</th>
-        <td>{{item.nombre}}</td>
-        <td>{{item.direccion}}</td>
-        <td>{{item.cantidadHabitaciones}}</td>
-        <td>{{item.precioPorDia}}</td>
+      <tbody class="disponibilidades">
+      <tr *ngFor="let item of items | async" class="itemDisponibilidad">
+        <th class="text-center">{{item.id}}</th>
+        <td class="text-center">{{item.nombre}}</td>
+        <td class="text-center">{{item.direccion}}</td>
+        <td class="text-center">{{item.cantidadHabitaciones}}</td>
+        <td class="text-center">{{item.precioPorDia}}</td>
         <td>
-          <button type="button" name = "button" class="btn btn-primary" id="linkReservar" [routerLink] = "['/reserva/crear',item.id,'2021-09-07','2021-09-10']" routerLinkActive="active">
+          <button type="button" name = "button" class="btn btn-primary" id="linkReservar{{item.id}}" [routerLink] = "['/reserva/crear',item.id]" routerLinkActive="active">
             Reservar
           </button></td>
       </tr>

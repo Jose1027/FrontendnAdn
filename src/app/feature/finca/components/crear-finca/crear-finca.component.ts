@@ -11,7 +11,7 @@ import swal from 'sweetalert2';
 })
 export class CrearFincaComponent implements OnInit {
 
-  public finca: Finca = new Finca('','','','','',);
+  public finca: Finca = new Finca('', '', '', '', '');
 
   constructor(protected fincaService: FincaService, protected router: Router) { }
 

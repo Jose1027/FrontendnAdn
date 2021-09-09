@@ -1,7 +1,7 @@
-import { AppPage } from "../app.po";
-import { NavbarPage } from "../page/navbar/navbar.po";
-import { FincaPage } from "../page/finca/finca.po";
-//import { browser } from 'protractor';
+import { AppPage } from '../app.po';
+import { NavbarPage } from '../page/navbar/navbar.po';
+import { FincaPage } from '../page/finca/finca.po';
+import { browser } from 'protractor';
 
 describe('workspace-project Finca', () => {
   let page: AppPage;
@@ -17,15 +17,16 @@ describe('workspace-project Finca', () => {
   it('A Listar fincas', () => {
     page.navigateTo();
     navBar.clickBotonFinca();
+    browser.sleep(5000);
 
     expect(1).toBe(finca.contarFincas());
   });
 
   it('B Crear finca', () => {
-    const nombre = "Finca 1";
-    const direccion = "calle 12 34-5";
-    const precioPorDia = "300000";
-    const cantidadHabitaciones = "3";
+    const nombre = 'Finca 1';
+    const direccion = 'calle 12 34-5';
+    const precioPorDia = '300000';
+    const cantidadHabitaciones = '3';
 
     page.navigateTo();
     navBar.clickBotonFinca();
@@ -36,6 +37,7 @@ describe('workspace-project Finca', () => {
     finca.ingresarCantidadHabitacionesCrearFinca(cantidadHabitaciones);
     finca.clickLinkAceptarCrearFinca();
     page.navigateTo();
+    browser.sleep(5000);
     navBar.clickBotonFinca();
 
     expect(2).toBe(finca.contarFincas());

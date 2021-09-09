@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Finca } from 'src/app/feature/finca/shared/model/finca';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listar-disponibilidad',
@@ -10,7 +11,7 @@ import { Finca } from 'src/app/feature/finca/shared/model/finca';
 export class ListarDisponibilidadComponent implements OnInit {
 
   @Input()
-  public items: Finca[];
+  public items: Observable<Finca[]>;
 
   constructor(private route: Router) { }
 

@@ -1,8 +1,8 @@
-//import { DatePipe } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Finca } from 'src/app/feature/finca/shared/model/finca';
 import { FincaService } from 'src/app/feature/finca/shared/service/finca.service';
-// import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-consultar-disponibilidad',
@@ -13,7 +13,7 @@ export class ConsultarDisponibilidadComponent implements OnInit {
 
   fechaInicio: string;
   fechaFin: string;
-  public listaFincas: Finca[];
+  public listaFincas: Observable<Finca[]>;
 
   constructor(protected fincaService: FincaService) { }
 
@@ -21,11 +21,7 @@ export class ConsultarDisponibilidadComponent implements OnInit {
   }
 
   consultarDisponibilidad(){
-    this.fincaService
-    .consultarDisponibilidad(this.fechaInicio, this.fechaFin)
-    .subscribe(response => {
-        this.listaFincas = response;
-      }
-    );
-  }
+  this.listaFincas = this.fincaService
+    .consultarDisponibilidad(this.fechaInicio, this.fechaFin);
+    }
 }

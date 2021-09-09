@@ -27,6 +27,6 @@ describe('ListarDisponibilidadComponent', () => {
 
   it('should create', () => {
      expect(component).toBeTruthy();
-        items.length == 2;
+     expect(2).toBe(items.length);
   });
 });

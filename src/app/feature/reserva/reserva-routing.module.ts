@@ -19,7 +19,7 @@ const routes: Routes = [
         component: ListarReservaComponent
       },
       {
-        path: 'crear/:id/:fechaInicio/:fechaFin',
+        path: 'crear/:id',
         component: CrearReservaComponent
       },
       {
